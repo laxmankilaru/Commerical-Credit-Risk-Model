@@ -1,0 +1,4 @@
+streamlit
+pandas
+plotly
+//can also be done using tableu, but thats for future
