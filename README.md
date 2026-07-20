@@ -1,13 +1,11 @@
 # UK Business Risk Dashboard 🇬🇧📊
 
-[![Live App](https://img.shields.io/badge/Live-Streamlit-00B4D8?style=for-the-badge)](INSERT_YOUR_STREAMLIT_URL_HERE)
+[![Live App](https://img.shields.io/badge/Live-Streamlit-00B4D8?style=for-the-badge)](https://commerical-credit-risk-model-waswsozn6shekqvlusmjbq.streamlit.app/)
 
 ## 👋 What is this?
 I built this project to get hands-on experience handling massive, messy, real-world datasets instead of just using clean Kaggle files. I wanted to see if I could use data to figure out which industries in the UK are the riskiest to start a business in (or for a bank to lend money to).
 
 To do this, I used the official UK Companies House dataset—a massive 5-million-row CSV containing info on every registered company in the country. I built a pipeline to clean it, load it into a database, run SQL analytics on it, and capped it off with an interactive web app.
-
-![Dashboard Screenshot](INSERT_IMAGE_LINK_HERE) *(Upload a screenshot to github and paste the link here)*
 
 ## 🧠 What I Learned & Built
 
@@ -24,8 +22,4 @@ To do this, I used the official UK Companies House dataset—a massive 5-million
 
 ## 🚀 Want to run it yourself?
 
-If you want to run the frontend dashboard locally on your machine:
-
-1. Clone this repo:
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/commercial-credit-risk-model.git](https://github.com/YOUR_USERNAME/commercial-credit-risk-model.git)
+Feel free to clone the repo and suggest changes.
