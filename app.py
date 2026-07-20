@@ -2,21 +2,16 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# 1. Page Configuration
 st.set_page_config(page_title="Commercial Credit Risk Dashboard", layout="wide")
 st.title("Commercial Credit Risk & Industry Stability")
 st.markdown("Automated B2B risk modeling using UK Companies House registry data.")
 
-# 2. Data Loading (Now using the CSV)
 @st.cache_data
 def load_data():
-    # Make sure this matches the exact name of your exported CSV file
-    df = pd.read_csv('regional_risk_rank.csv')
-    return df
+    return pd.read_csv('regional_risk_rank.csv')
 
 df = load_data()
 
-# 3. Sidebar Filters
 st.sidebar.header("Territory Filter")
 regions = ['All'] + sorted(df['region'].dropna().unique().tolist())
 selected_region = st.sidebar.selectbox("Select Region (Postcode Prefix)", regions)
@@ -27,8 +22,6 @@ else:
     filtered_df = df
 
 st.markdown("---")
-
-# 4. The Underwriter's Scatter Plot
 st.subheader("Risk vs. Market Size Matrix")
 st.markdown("Identify industries with high market opportunity and low historical default rates.")
 
@@ -39,7 +32,7 @@ fig = px.scatter(
     color="regional_risk_rank",
     hover_name="industry_description",
     hover_data=["region", "total_dissolved"],
-    color_continuous_scale="Reds_r", 
+    color_continuous_scale="Reds_r",
     labels={
         "total_companies": "Total Active Companies (Market Size)",
         "failure_rate_pct": "Historical Failure Rate (%)",
@@ -49,8 +42,6 @@ fig = px.scatter(
 st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("---")
-
-# 5. The "Do Not Lend" Hit List
 st.subheader("Top High-Risk Sectors")
 st.markdown("The top 5 most volatile industries based on regional historical dissolution data.")
 
